@@ -1,3 +1,3 @@
 function Thermostat() {
-  // this.temp = 20;
+  this.temp = 20;
 }
