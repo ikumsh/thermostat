@@ -37,5 +37,11 @@ describe('Thermostat', function() {
       mrThermo.up()
       expect(mrThermo.temp).toEqual(25);
     });
+    it('has a maximum temp of 32 degrees with Power Saver off', function() {
+      mrThermo.psmSwitch()
+      mrThermo.temp = 32
+      mrThermo.up()
+      expect(mrThermo.temp).toEqual(32);
+    });
   });
 });
