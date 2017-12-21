@@ -12,6 +12,10 @@ Thermostat.prototype.down = function() {
   if(this.temp > 10) { this.temp -= 1 };
 };
 
+Thermostat.prototype.reset = function() {
+  this.temp = 20;
+};
+
 Thermostat.prototype.psmSwitch = function() {
   this.psm = !this.psm;
   // if(this.psm && this.temp > 25) { this.temp = 25 };
