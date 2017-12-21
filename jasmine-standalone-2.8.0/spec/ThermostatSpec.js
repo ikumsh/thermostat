@@ -15,6 +15,7 @@ describe('Thermostat', function() {
       expect(mrThermo.temp).toEqual(10);
     });
   });
+
   describe('changing temperature', function() {
     it('temperature can be raised', function() {
       mrThermo.up()
@@ -48,6 +49,21 @@ describe('Thermostat', function() {
       mrThermo.temp = 32
       mrThermo.up()
       expect(mrThermo.temp).toEqual(32);
+    });
+  });
+
+  describe('power usage', function() {
+    it('has a low usage', function() {
+      mrThermo.temp = 17
+      expect(mrThermo.usageLevel()).toEqual('low-usage')
+    });
+    it('has a medium usage', function() {
+      mrThermo.temp = 24
+      expect(mrThermo.usageLevel()).toEqual('medium-usage')
+    });
+    it('has a high usage', function() {
+      mrThermo.temp = 25
+      expect(mrThermo.usageLevel()).toEqual('high-usage')
     });
   });
 });

@@ -20,3 +20,9 @@ Thermostat.prototype.psmSwitch = function() {
   this.psm = !this.psm;
   // if(this.psm && this.temp > 25) { this.temp = 25 };
 };
+
+Thermostat.prototype.usageLevel = function() {
+  if(this.temp < 18) { return 'low-usage'};
+  if(this.temp < 25) { return 'medium-usage'};
+  if(this.temp <= 32) {return 'high-usage'};
+};
