@@ -25,6 +25,12 @@ describe('Thermostat', function() {
       mrThermo.down()
       expect(mrThermo.temp).toEqual(19);
     });
+
+    it('temperature can be reset', function() {
+      mrThermo.up()
+      mrThermo.reset()
+      expect(mrThermo.temp).toEqual(20);
+    });
   });
 
   describe('power saving green mode', function() {
